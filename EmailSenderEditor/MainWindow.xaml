@@ -1,0 +1,42 @@
+﻿<Window x:Class="EmailSenderEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактор файла конфигурации сервиса отправки почты" Height="414" Width="561" Icon="/EmailSenderEditor;component/settings.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Путь файла конфигурации сервиса: " Height="28" HorizontalAlignment="Left" Margin="6,12,0,0" Name="label1" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+        <TextBox Height="23" Margin="5,14,35,0" Name="configFilePath" VerticalAlignment="Top" Grid.Column="1" />
+        <Button Content="..." Grid.Column="1" Height="23" HorizontalAlignment="Right" Margin="0,14,7,0" Name="findConfig" VerticalAlignment="Top" Width="28" Click="findConfig_Click" />
+        <GroupBox Grid.ColumnSpan="2" Header="Файл конфигурации сервиса: " Margin="12,46,7,36" Name="groupBox1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="155" />
+                    <ColumnDefinition Width="353*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="e-mail: " Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label2" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,6,6,0" Name="eMail" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Пользователь: " Height="28" HorizontalAlignment="Left" Margin="6,35,0,0" Name="label3" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,35,6,0" Name="User" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Пароль: " Height="28" HorizontalAlignment="Left" Margin="6,64,0,0" Name="label4" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,64,6,0" Name="Pass" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Отправитель:" Height="28" HorizontalAlignment="Left" Margin="6,93,0,0" Name="label5" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,93,6,0" Name="Sender" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Smtp сервер:" Height="28" HorizontalAlignment="Left" Margin="6,122,0,0" Name="label6" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,122,6,0" Name="Server" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Smtp порт:" Height="28" HorizontalAlignment="Left" Margin="6,151,0,0" Name="label7" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,151,6,0" Name="Port" VerticalAlignment="Top" Grid.Column="1" />
+                <Label Content="Строка соединения с БД:" Height="28" HorizontalAlignment="Left" Margin="6,209,0,0" Name="label8" VerticalAlignment="Top" />
+                <TextBox Height="23" Margin="0,209,6,0" Name="ConnectionString" VerticalAlignment="Top" Grid.Column="1" />
+                <Button Content="Проверить подкючение" Grid.Column="1" Height="25" HorizontalAlignment="Left" Margin="0,238,0,0" Name="CheckConnection" VerticalAlignment="Top" Width="159" Click="CheckConnection_Click" />
+                <Button Content="Проверить таблицу" Height="25" HorizontalAlignment="Left" Margin="165,238,0,0" Name="CheckTable" VerticalAlignment="Top" Width="159" Grid.Column="1" Click="CheckTable_Click" />
+                <Label Content="Интервал проверки (мс):" Height="28" HorizontalAlignment="Left" Margin="6,180,0,0" Name="label9" VerticalAlignment="Top" />
+                <TextBox Grid.Column="1" Height="23" Margin="0,180,6,0" Name="Delay" VerticalAlignment="Top" />
+            </Grid>
+        </GroupBox>
+        <Button Content="Открыть" Grid.Column="1" Height="25" HorizontalAlignment="Right" Margin="0,0,91,6" Name="OpenConfig" VerticalAlignment="Bottom" Width="75" Click="OpenConfig_Click" />
+        <Button Content="Сохранить" Height="25" HorizontalAlignment="Right" Margin="0,0,7,6" Name="SaveConfig" VerticalAlignment="Bottom" Width="75" Grid.Column="1" Click="SaveConfig_Click" />
+    </Grid>
+</Window>
